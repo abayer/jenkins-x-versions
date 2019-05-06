@@ -5,9 +5,9 @@ clusters:
       - cluster
       - gke
       - --tekton
-      - --project-id=jenkins-x-bdd
+      - --project-id=abayer-jx-experiment
       - -m=n1-standard-2
       - --min-num-nodes=3
       - --max-num-nodes=5
-      - -z=europe-west1-c
+      - -z=us-west1-b
       - --skip-login
