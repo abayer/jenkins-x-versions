@@ -2,10 +2,10 @@
 set -e
 set -x
 
-export GH_USERNAME="jenkins-x-bot-test"
-export GH_OWNER="cb-kubecd"
+export GH_USERNAME="abayer"
+export GH_OWNER="cloudcat-meow"
 
-export GH_CREDS_PSW="$(jx step credential -s jenkins-x-bot-test-github)"
+export GH_CREDS_PSW="$(jx step credential -s abayer)"
 export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user)"
 export GKE_SA="$(jx step credential -k bdd-credentials.json -s bdd-secret -f sa.json)"
 
@@ -23,8 +23,8 @@ jx step git credentials
 gcloud auth activate-service-account --key-file $GKE_SA
 
 # lets setup git 
-git config --global --add user.name JenkinsXBot
-git config --global --add user.email jenkins-x@googlegroups.com
+git config --global --add user.name abayer
+git config --global --add user.email andrew.bayer@gmail.com
 
 echo "running the BDD tests with JX_HOME = $JX_HOME"
 
