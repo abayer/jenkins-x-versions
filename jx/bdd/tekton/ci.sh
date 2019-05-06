@@ -5,12 +5,12 @@ set -x
 export GH_USERNAME="abayer"
 export GH_OWNER="cloudcat-meow"
 
-export GH_CREDS_PSW="$(jx step credential -s abayer)"
-export JENKINS_CREDS_PSW="$(jx step credential -s  test-jenkins-user)"
-export GKE_SA="$(jx step credential -k bdd-credentials.json -s bdd-secret -f sa.json)"
+export GH_CREDS_PSW=b22c1ebaf64dbfea74cceb3d7e3caff00f910332
+export JENKINS_CREDS_PSW=dontreallycare
+#export GKE_SA="$(jx step credential -k bdd-credentials.json -s bdd-secret -f sa.json)"
 
 # fix broken `BUILD_NUMBER` env var
-export BUILD_NUMBER="$BUILD_ID"
+export BUILD_NUMBER=5
 
 JX_HOME="/tmp/jxhome"
 KUBECONFIG="/tmp/jxhome/config"
@@ -18,9 +18,9 @@ KUBECONFIG="/tmp/jxhome/config"
 mkdir -p $JX_HOME
 
 jx --version
-jx step git credentials
+#jx step git credentials
 
-gcloud auth activate-service-account --key-file $GKE_SA
+#gcloud auth activate-service-account --key-file $GKE_SA
 
 # lets setup git 
 git config --global --add user.name abayer
